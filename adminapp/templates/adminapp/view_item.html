@@ -1,0 +1,23 @@
+{% include 'adminapp/admin_header.html' %}
+<h1 align="center"> items</h1>
+    <form>
+        <table border="1" align="center" class="" >
+                <tr>
+                    <th>items name</th>
+                    <th>quantity</th>
+                    <th>parchased date</th>
+                </tr>
+                {% for i in data %}
+                <tr>
+                     <td>{{i.item_name}}</td>
+                     <td>{{i.count}}</td>
+                     <td>{{i.date}}</td>
+                     <td>{{i.id}}</td>
+                     <td><a href="{% url 'edit_item' itemid=i.id %}?itemid=i.id">edit</a></td>
+                     <td><a href="{% url 'delete_item' itemid=i.id %}?itemid=i.id">delete</a></td>
+                </tr> 
+                
+                {% endfor %}   
+                    
+        </table>
+    </form>

@@ -1,0 +1,21 @@
+{% include 'publicapp/public_header.html' %}
+<h1 align="center">login</h1>
+<form action="{% url 'home' %}" method="POST">{% csrf_token %}
+    <table>
+        <tr>
+            <td>user name</td>
+            <td><input type="text" name="uname" required></td>
+        </tr>
+        <tr>
+            <td>password</td>
+            <td><input type="password" name="psswd" required></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="submit" value="submit"></td>
+        </tr>
+        {% if msg %}
+        {{msg}}
+        {% endif %}
+    </table>
+</form>
+{% include 'publicapp/public_footer.html' %}

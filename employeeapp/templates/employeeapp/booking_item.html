@@ -1,0 +1,28 @@
+{% include 'employeeapp/emp_header.html' %}
+booking item
+<form action="{% url 'booking_item' data.id %}" method="POST">{% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>iem name</td>
+            <td><input type="text" name="name" value="{{data.item_name}}" readonly></td>
+        </tr>
+        <tr>
+            <td>total count</td>
+            <td><input type="text" name="c" value="{{c}}" readonly> </td>
+        </tr>
+        <tr>
+            <td>count</td>
+            <td><input type="text" name="c1" value="" required> </td>
+        </tr>
+        <tr>
+            <td>booking date</td>
+            <td><input type="date" name="d" value="" required></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit"  value="book" ></td>
+        </tr>      
+    </table>
+    
+</form>
+{% include 'employeeapp/emp_footer.html' %}

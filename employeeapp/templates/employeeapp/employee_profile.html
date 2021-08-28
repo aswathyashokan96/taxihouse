@@ -1,0 +1,31 @@
+{% include 'employeeapp/emp_header.html' %}
+<h1 align="center">Employee profile</h1>
+<br>
+<form action="#" method="POST">{% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>name</td>
+            <td><input type="text" value="{{data.name}}" readonly></td>
+        </tr>
+        <tr>
+            <td>address</td>
+            <td><input type="text" value="{{data.address}}" readonly> </td>
+        </tr>
+        <tr>
+            <td>gender</td>
+            <td><input type="text" value="{{data.gender}}" readonly></td>
+        </tr>
+        <tr>
+            <td>Email id</td>
+            <td><input type="email" value="{{data.email}}" readonly></td>
+        </tr>
+        <tr>
+            <td>phone number</td>
+            <td><input type="number" value="{{data.phone_no}}" readonly></td>
+        </tr>
+       
+              
+    </table>
+    
+</form>
+{% include 'employeeapp/emp_footer.html' %}

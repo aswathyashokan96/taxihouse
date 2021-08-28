@@ -1,0 +1,24 @@
+{% include 'adminapp/admin_header.html' %}
+<h1 align="center">update</h1>
+<br>
+<form action="{% url 'edit_item' data.id %}" method="POST">{% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>iem name</td>
+            <td><input type="text" name="name" value="{{data.item_name}}" ></td>
+        </tr>
+        <tr>
+            <td>count</td>
+            <td><input type="text" name="c" value="{{data.count}}" > </td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td><input type="text" name="d" value="{{data.date}}" ></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit"  value="update" ></td>
+        </tr>      
+    </table>
+    
+</form>
