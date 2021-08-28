@@ -34,3 +34,6 @@ urlpatterns = [
     url(r'employee_profile/$',employee_profile,name='employee_profile'),
     url(r'view_available_items/$',view_available_items,name="view_available_items")
 ]
+
+urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
